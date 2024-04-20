@@ -1,23 +1,7 @@
-# freetype packaged for the Zig build system
+# freetype for zig 0.12.0
 
-This is a fork of [freetype](https://gitlab.freedesktop.org/freetype/freetype), packaged for Zig. Unnecessary files have been deleted, and the build system has been replaced with build.zig.
+This is a fork of [freetype](https://github.com/hexops/freetype), updated for zig 0.12.0 and packaged with all the dependencies.
 
-_Looking for Zig bindings to Freetype?_ See [mach/freetype](https://github.com/hexops/mach-freetype).
+Of course this repo will update along [Zig3D](https://github.com/Darkfllame/Zig3D), it will be updated to every major versions of Zig.
 
-## Updating
-
-To update this repository, run `./update.sh` followed by `./verify.sh` to verify the repository contents.
-
-## Verifying repository contents
-
-For supply chain security reasons (e.g. to confirm we made no patches to the code) we provide a `git diff` command you can run to verify the contents of this repository:
-
-```sh
-./verify.sh
-```
-
-If nothing is printed, there is no diff. Deleted files, and changes to `README.md`, `build.zig`, `.github` CI files and `.gitignore` are ignored.
-
-## Issues
-
-Issues are tracked in the [main Mach repository](https://github.com/hexops/mach/issues?q=is%3Aissue+is%3Aopen+label%3Afreetype).
+If you really want the raw bindings you can use this library. Otherwise, I highly recommend you to use my wrapper library: Zig3D.
