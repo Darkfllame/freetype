@@ -13,7 +13,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     lib.linkLibC();
-    lib.addIncludePath(.{ .path = "include" });
+    lib.addIncludePath(b.path("include"));
     lib.defineCMacro("FT2_BUILD_LIBRARY", "1");
 
     if (use_system_zlib) {
@@ -34,8 +34,8 @@ pub fn build(b: *std.Build) void {
         .file = .{ .path = "src/base/ftmac.c" },
         .flags = &.{},
     });
-    lib.installHeadersDirectory("include/freetype", "freetype");
-    lib.installHeader("include/ft2build.h", "ft2build.h");
+    lib.installHeadersDirectory(b.path("include/freetype"), "freetype", .{});
+    lib.installHeader(b.path("include/ft2build.h"), "ft2build.h");
     b.installArtifact(lib);
 }
 
